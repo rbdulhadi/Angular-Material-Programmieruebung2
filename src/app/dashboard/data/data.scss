@@ -1,0 +1,168 @@
+.data-container {
+  padding: 2rem;
+
+  .empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+
+  .registrations-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .pagination-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      .page-info {
+        font-size: 0.875rem;
+        color: #666;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.grid-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .grid-row {
+    display: grid;
+    width: 100%;
+    position: relative;
+  }
+
+  .row-loading {
+    position: relative;
+  }
+
+  .row-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-radius: 4px;
+  }
+
+  .grid-header-row {
+    background-color: #f5f5f5;
+  }
+
+  .grid-header {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    padding: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .grid-cell {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    // Text-Content innerhalb der Zelle
+    > *,
+    .cell-content {
+      min-width: 0;
+      overflow: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  .grid-cell-center,
+  .grid-header.grid-cell-center {
+    justify-content: center;
+  }
+
+  // Courses Grid - Desktop
+  @media (min-width: 768px) {
+    &.courses-grid {
+      .grid-row {
+        grid-template-columns: 2.5fr 1.5fr 2fr 1fr 1.5fr 2.5fr;
+      }
+    }
+
+    &.registrations-grid {
+      .grid-row {
+        grid-template-columns: 2fr 1.5fr 2fr 1.5fr;
+      }
+
+      // Zentriere Aktion Spalte
+      .grid-header:last-child,
+      .grid-cell:last-child {
+        justify-content: center;
+      }
+    }
+  }
+
+  // Mobile Layout
+  @media (max-width: 767px) {
+    .grid-row {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-header,
+    .grid-cell {
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .grid-header-row {
+      .grid-header {
+        border-bottom: 2px solid #e0e0e0;
+        margin-top: 0.5rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

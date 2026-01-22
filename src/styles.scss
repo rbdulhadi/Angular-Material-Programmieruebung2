@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Einheitliche Schriftart für die gesamte Anwendung */
+* {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Sicherstellen, dass alle Material-Komponenten die gleiche Schriftart verwenden */
+.mat-typography {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Sicherstellen, dass Grid-Daten die gleiche Schriftart wie andere UI-Komponenten verwenden */
+.grid-container {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  
+  .grid-header,
+  .grid-cell {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
